@@ -1,0 +1,494 @@
+.about-page {
+  color: var(--body-text);
+  background: var(--ivory);
+}
+
+.about-banner {
+  position: relative;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(36, 77, 10, 0.08);
+  background:
+    linear-gradient(90deg, rgba(250, 249, 242, 0.97) 0%, rgba(250, 249, 242, 0.86) 43%, rgba(232, 235, 213, 0.52) 100%),
+    radial-gradient(circle at 80% 35%, rgba(72, 110, 39, 0.18), transparent 28%),
+    linear-gradient(120deg, #f5f4e9, #dbe3ca);
+}
+
+.about-banner::after {
+  position: absolute;
+  z-index: -1;
+  right: -5%;
+  bottom: -75%;
+  width: 54%;
+  height: 160%;
+  border-radius: 50%;
+  background: rgba(255, 253, 247, 0.23);
+  content: '';
+  transform: rotate(-9deg);
+}
+
+.about-banner-inner {
+  width: min(1240px, calc(100% - 96px));
+  margin: 0 auto;
+  padding: 26px 0 29px;
+}
+
+.banner-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.banner-eyebrow p {
+  margin: 0;
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.banner-eyebrow span {
+  width: 48px;
+  height: 1px;
+  background: rgba(36, 77, 10, 0.65);
+}
+
+.about-banner h1 {
+  margin: 7px 0 0;
+  color: #102017;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(38px, 4vw, 50px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.about-subtitle {
+  margin: 3px 0 0;
+  color: #303a33;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+}
+
+.banner-leaf {
+  position: absolute;
+  width: 105px;
+  color: rgba(52, 93, 31, 0.23);
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.banner-leaf-left {
+  bottom: -42px;
+  left: -10px;
+}
+
+.banner-leaf-right {
+  top: -42px;
+  right: 40px;
+  transform: rotate(205deg) scale(1.45);
+}
+
+.introduction-section {
+  padding: 30px 48px 25px;
+}
+
+.introduction-grid {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 275px minmax(360px, 1fr) 365px;
+  gap: 44px;
+  align-items: center;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 255px;
+  height: 260px;
+  margin-left: 22px;
+  border-radius: 9px;
+  background: var(--sage);
+}
+
+.portrait-frame::before {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  bottom: -13px;
+  left: -22px;
+  z-index: 0;
+  border-radius: 9px;
+  background: #e1e7cc;
+  content: '';
+}
+
+.portrait-placeholder {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(36, 77, 10, 0.1);
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255, 253, 247, 0.95), transparent 26%),
+    linear-gradient(145deg, #edf0df, #ccd8b7);
+  color: rgba(36, 77, 10, 0.66);
+}
+
+.portrait-placeholder svg {
+  width: 88px;
+  height: 88px;
+}
+
+.portrait-placeholder span {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: rgba(255, 253, 247, 0.72);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-eyebrow span {
+  width: 29px;
+  height: 1px;
+  background: var(--forest);
+}
+
+.about-eyebrow span:last-child {
+  width: 49px;
+}
+
+.about-eyebrow p {
+  margin: 0;
+  color: var(--forest);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.introduction-copy h2,
+.education-section h2 {
+  color: #122018;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.introduction-copy h2 {
+  margin: 10px 0 1px;
+  font-size: 31px;
+  line-height: 1.1;
+}
+
+.introduction-designation {
+  margin: 0 0 10px !important;
+  color: var(--forest);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px !important;
+  font-weight: 600;
+}
+
+.introduction-copy > p {
+  margin: 0 0 10px;
+  color: #303a33;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.professional-card {
+  padding: 5px 17px;
+  border: 1px solid rgba(36, 77, 10, 0.04);
+  border-radius: 9px;
+  background: linear-gradient(120deg, rgba(247, 247, 235, 0.96), rgba(240, 242, 226, 0.72));
+}
+
+.professional-row {
+  min-height: 62px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.professional-row + .professional-row {
+  border-top: 1px solid rgba(36, 77, 10, 0.11);
+}
+
+.professional-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.professional-row h3 {
+  margin: 0 0 2px;
+  color: var(--forest);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.professional-row p {
+  max-width: 240px;
+  margin: 0;
+  color: #303a33;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.education-section {
+  padding: 20px 48px 34px;
+  background:
+    linear-gradient(rgba(250, 249, 242, 0.96), rgba(250, 249, 242, 0.96)),
+    radial-gradient(circle at 15% 100%, rgba(214, 223, 190, 0.7), transparent 30%);
+}
+
+.education-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.education-section h2 {
+  margin: 6px 0 20px 48px;
+  font-size: 27px;
+}
+
+.academic-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.academic-timeline::before {
+  position: absolute;
+  top: 56px;
+  right: 7%;
+  left: 7%;
+  height: 2px;
+  background: #969b92;
+  content: '';
+}
+
+.timeline-stage {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.qualification-heading {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  gap: 19px;
+  text-align: left;
+}
+
+.qualification-icon {
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2e720e, #4d900f);
+  color: var(--ivory);
+}
+
+.qualification-heading h3 {
+  margin: 0 0 1px;
+  color: #162119;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.qualification-heading p {
+  margin: 0;
+  color: #263128;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.timeline-dot {
+  position: relative;
+  width: 13px;
+  height: 13px;
+  margin: -1px auto 12px;
+  border: 3px solid var(--cream);
+  border-radius: 50%;
+  display: block;
+  background: var(--forest);
+  box-shadow: 0 0 0 1px rgba(36, 77, 10, 0.15);
+}
+
+.qualification-description {
+  max-width: 320px;
+  margin: 0 auto;
+  color: #303a33;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+@media (max-width: 1100px) {
+  .introduction-grid {
+    grid-template-columns: 230px 1fr;
+    gap: 32px;
+  }
+
+  .portrait-frame {
+    width: 220px;
+    height: 250px;
+  }
+
+  .professional-card {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .professional-row + .professional-row {
+    border-top: 0;
+  }
+
+  .professional-row:nth-child(even) {
+    border-left: 1px solid rgba(36, 77, 10, 0.11);
+    padding-left: 17px;
+  }
+
+  .professional-row:nth-child(n + 3) {
+    border-top: 1px solid rgba(36, 77, 10, 0.11);
+  }
+}
+
+@media (max-width: 720px) {
+  .about-banner {
+    min-height: 142px;
+  }
+
+  .about-banner-inner {
+    width: calc(100% - 40px);
+  }
+
+  .banner-leaf-right {
+    right: -35px;
+  }
+
+  .introduction-section,
+  .education-section {
+    padding-inline: 20px;
+  }
+
+  .introduction-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-frame {
+    width: min(300px, calc(100% - 22px));
+    height: 310px;
+    margin: 0 auto 3px;
+  }
+
+  .professional-card {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .professional-row:nth-child(even) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .professional-row + .professional-row {
+    border-top: 1px solid rgba(36, 77, 10, 0.11);
+  }
+
+  .education-section {
+    padding-top: 28px;
+    padding-bottom: 44px;
+  }
+
+  .education-section h2 {
+    margin-left: 0;
+  }
+
+  .academic-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 4px;
+  }
+
+  .academic-timeline::before {
+    top: 24px;
+    bottom: 52px;
+    left: 27px;
+    width: 2px;
+    height: auto;
+  }
+
+  .timeline-stage {
+    min-height: 128px;
+    padding-left: 75px;
+    text-align: left;
+  }
+
+  .qualification-heading {
+    min-height: 54px;
+    display: flex;
+  }
+
+  .qualification-icon {
+    position: absolute;
+    top: 0;
+    left: 4px;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    top: 51px;
+    left: 21px;
+    margin: 0;
+  }
+
+  .qualification-description {
+    max-width: none;
+    margin: 4px 0 0;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-eyebrow span:last-child {
+    display: none;
+  }
+
+  .introduction-copy h2 {
+    font-size: 27px;
+  }
+}

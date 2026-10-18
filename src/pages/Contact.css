@@ -1,0 +1,374 @@
+.contact-page {
+  color: var(--body-text);
+  background: var(--ivory);
+}
+
+.contact-banner {
+  min-height: 220px;
+  border-bottom: 1px solid rgba(36, 77, 10, 0.08);
+  display: flex;
+  align-items: center;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(250, 249, 242, 0.99) 0%,
+      rgba(250, 249, 242, 0.94) 38%,
+      rgba(250, 249, 242, 0.4) 60%,
+      rgba(250, 249, 242, 0.02) 82%
+    ),
+    url('/contact-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-banner-inner,
+.contact-content {
+  width: min(1240px, calc(100% - 96px));
+  margin: 0 auto;
+}
+
+.contact-banner-inner {
+  padding-block: 28px;
+}
+
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.contact-eyebrow p,
+.contact-label p {
+  margin: 0;
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.contact-eyebrow span {
+  width: 52px;
+  height: 1px;
+  background: var(--forest);
+}
+
+.contact-banner h2 {
+  margin: 8px 0 1px;
+  color: #102017;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(43px, 5vw, 61px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.contact-banner-inner > p {
+  margin: 0;
+  color: #303a33;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(16px, 1.65vw, 20px);
+}
+
+.contact-title-accent {
+  width: 37px;
+  height: 2px;
+  display: block;
+  margin-top: 15px;
+  background: var(--forest);
+}
+
+.contact-content {
+  padding: 20px 0 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 43%) minmax(0, 57%);
+  gap: 18px;
+}
+
+.contact-left-column {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-card {
+  min-width: 0;
+  padding: 13px 20px 16px;
+  border: 1px solid #e5e4d8;
+  border-radius: 7px;
+  background: rgba(255, 253, 247, 0.76);
+}
+
+.contact-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-label span {
+  width: 35px;
+  height: 1px;
+  background: var(--forest);
+}
+
+.contact-label p {
+  font-size: 10px;
+}
+
+.contact-label.centered span:last-child {
+  width: 44px;
+}
+
+.contact-information-list {
+  margin-top: 5px;
+}
+
+.contact-information-item {
+  min-height: 78px;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 20px;
+  gap: 13px;
+  align-items: center;
+}
+
+.contact-information-item + .contact-information-item {
+  border-top: 1px solid #e4e4d9;
+}
+
+.contact-icon-circle,
+.social-links a {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.contact-information-item h4 {
+  margin: 0 0 4px;
+  color: #152119;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 15px;
+}
+
+.contact-information-item a {
+  display: inline-block;
+  max-width: 100%;
+  color: #244d27;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.contact-information-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-information-item > svg {
+  color: var(--forest);
+}
+
+.connect-card {
+  padding-top: 16px;
+}
+
+.connect-card > p {
+  margin: 17px 10px 12px;
+  color: #344038;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.social-links {
+  margin: 0 10px;
+  display: flex;
+  gap: 18px;
+}
+
+.social-links a {
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: var(--forest);
+  color: var(--ivory);
+}
+
+.message-card {
+  padding: 13px 20px 18px;
+}
+
+.message-card form {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.message-card label {
+  display: grid;
+  gap: 5px;
+}
+
+.message-card label > span {
+  color: #25332b;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.message-card label b {
+  color: #a03024;
+}
+
+.message-card input,
+.message-card select,
+.message-card textarea {
+  width: 100%;
+  border: 1px solid #d8d9d0;
+  border-radius: 5px;
+  background: rgba(255, 255, 252, 0.86);
+  color: #26342d;
+  font: 12px 'Inter', Arial, sans-serif;
+}
+
+.message-card input,
+.message-card select {
+  min-height: 39px;
+  padding: 0 11px;
+}
+
+.message-card textarea {
+  min-height: 112px;
+  padding: 10px 11px;
+  resize: vertical;
+}
+
+.message-card input:focus,
+.message-card select:focus,
+.message-card textarea:focus {
+  border-color: var(--forest);
+  outline: 3px solid rgba(36, 77, 10, 0.14);
+}
+
+.message-card [aria-invalid='true'] {
+  border-color: #a03024;
+}
+
+.message-card label small {
+  color: #9a3026;
+  font-size: 10px;
+}
+
+.message-card form > button {
+  min-height: 45px;
+  padding: 0 24px;
+  border: 1px solid var(--forest);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  gap: 10px;
+  background: var(--forest);
+  color: var(--ivory);
+  cursor: pointer;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.message-card form > button:hover {
+  background: var(--dark-green);
+}
+
+.form-status {
+  padding: 10px 12px;
+  margin: 0;
+  border-radius: 5px;
+  background: #edf2df;
+  color: var(--forest);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.form-status.error {
+  background: #f7e9e4;
+  color: #8c2c22;
+}
+
+@media (max-width: 1020px) {
+  .contact-banner-inner,
+  .contact-content {
+    width: calc(100% - 56px);
+  }
+
+  .contact-content {
+    grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  }
+
+  .contact-card {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-banner {
+    min-height: 205px;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(250, 249, 242, 0.99) 0%,
+        rgba(250, 249, 242, 0.94) 57%,
+        rgba(250, 249, 242, 0.42) 83%,
+        rgba(250, 249, 242, 0.08) 100%
+      ),
+      url('/contact-bg.png');
+    background-position: 65% center;
+  }
+
+  .contact-banner-inner,
+  .contact-content {
+    width: calc(100% - 40px);
+  }
+
+  .contact-banner-inner > p {
+    max-width: 74%;
+    line-height: 1.35;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-banner {
+    min-height: 195px;
+    background-position: 70% center;
+  }
+
+  .contact-banner h2 {
+    font-size: 43px;
+  }
+
+  .contact-information-item {
+    grid-template-columns: 50px minmax(0, 1fr) 17px;
+    gap: 10px;
+  }
+
+  .contact-icon-circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .message-card form > button {
+    width: 100%;
+  }
+}

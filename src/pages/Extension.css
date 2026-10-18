@@ -1,0 +1,446 @@
+.extension-page {
+  color: var(--body-text);
+  background: var(--ivory);
+}
+
+.extension-banner {
+  min-height: 230px;
+  border-bottom: 1px solid rgba(36, 77, 10, 0.08);
+  display: flex;
+  align-items: center;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(250, 249, 242, 0.99) 0%,
+      rgba(250, 249, 242, 0.93) 38%,
+      rgba(250, 249, 242, 0.38) 61%,
+      rgba(250, 249, 242, 0.02) 83%
+    ),
+    url('/extension-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.extension-banner-inner,
+.extension-content {
+  width: min(1240px, calc(100% - 96px));
+  margin: 0 auto;
+}
+
+.extension-banner-inner {
+  padding-block: 28px;
+}
+
+.extension-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.extension-eyebrow p,
+.extension-label p {
+  margin: 0;
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.extension-eyebrow span {
+  width: 61px;
+  height: 1px;
+  background: var(--forest);
+}
+
+.extension-banner h2 {
+  margin: 8px 0 1px;
+  color: #102017;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(43px, 5vw, 61px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.extension-banner-inner > p {
+  margin: 0;
+  color: #303a33;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(16px, 1.65vw, 20px);
+}
+
+.extension-title-accent {
+  width: 37px;
+  height: 2px;
+  display: block;
+  margin-top: 15px;
+  background: var(--forest);
+}
+
+.extension-content {
+  padding: 20px 0 43px;
+}
+
+.extension-label {
+  margin: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.extension-label span {
+  width: 55px;
+  height: 1px;
+  background: var(--forest);
+}
+
+.extension-label p {
+  font-size: 10px;
+}
+
+.extension-key-grid {
+  min-height: 102px;
+  padding: 11px 16px;
+  border: 1px solid rgba(229, 228, 216, 0.55);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: linear-gradient(110deg, #f9f8ee, #f3f4e6);
+}
+
+.extension-key-item {
+  min-width: 0;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.extension-key-item + .extension-key-item {
+  border-left: 1px solid #dfe1d4;
+}
+
+.extension-icon-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: grid;
+  flex: 0 0 55px;
+  place-items: center;
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.extension-key-item h4,
+.activity-card h4 {
+  margin: 0 0 4px;
+  color: #152119;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.extension-key-item p {
+  max-width: 190px;
+  margin: 0;
+  color: #3d4841;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.activities-section {
+  margin-top: 24px;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.activity-card {
+  min-width: 0;
+  border: 1px solid #e5e4d8;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--ivory);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.activity-card:hover,
+.activity-card:focus-within {
+  box-shadow: 0 11px 28px rgba(24, 59, 18, 0.1);
+  transform: translateY(-3px);
+}
+
+.activity-media {
+  position: relative;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-color: #e4ead4;
+  background-image:
+    linear-gradient(rgba(24, 59, 18, 0.18), rgba(24, 59, 18, 0.18)),
+    url('/extension-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.farmer-media {
+  background-position: 30% center;
+}
+
+.training-media {
+  background-position: 58% center;
+}
+
+.radio-media {
+  background-image:
+    linear-gradient(135deg, rgba(23, 42, 29, 0.92), rgba(64, 85, 57, 0.82)),
+    url('/extension-bg.png');
+  background-position: center;
+}
+
+.activity-media > span {
+  min-width: 145px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 253, 247, 0.65);
+  border-radius: 8px;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  background: rgba(255, 253, 247, 0.82);
+  color: var(--forest);
+  backdrop-filter: blur(3px);
+}
+
+.radio-media > span {
+  background: rgba(255, 253, 247, 0.9);
+}
+
+.activity-media small {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.activity-card-body {
+  padding: 15px 27px 18px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.activity-card h4 {
+  font-size: 18px;
+}
+
+.activity-card-body > p {
+  margin: 0 0 18px;
+  color: #344038;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.activity-card button {
+  min-height: 38px;
+  padding: 0;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  background: transparent;
+  color: var(--forest);
+  cursor: pointer;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.activity-card button > span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #3f810e, #2c660a);
+  color: var(--ivory);
+}
+
+.activity-card button:hover {
+  color: #4d851d;
+}
+
+.extension-modal-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 29, 18, 0.58);
+}
+
+.extension-modal {
+  position: relative;
+  width: min(520px, 100%);
+  padding: 34px;
+  border: 1px solid #d9ddcc;
+  border-radius: 12px;
+  background: var(--ivory);
+  box-shadow: 0 24px 70px rgba(15, 29, 18, 0.24);
+}
+
+.extension-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  color: var(--forest);
+  cursor: pointer;
+}
+
+.extension-modal-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.extension-modal > p:first-of-type {
+  margin: 16px 0 4px;
+  color: var(--forest);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.extension-modal h3 {
+  margin: 0 0 12px;
+  color: #152119;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 27px;
+}
+
+.extension-modal > p:last-child {
+  margin: 0;
+  color: #3d4841;
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.55;
+}
+
+@media (max-width: 1050px) {
+  .extension-banner-inner,
+  .extension-content {
+    width: calc(100% - 56px);
+  }
+
+  .extension-key-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .extension-key-item {
+    min-height: 86px;
+  }
+
+  .extension-key-item:nth-child(3) {
+    border-left: 0;
+  }
+
+  .extension-key-item:nth-child(n + 3) {
+    border-top: 1px solid #dfe1d4;
+  }
+
+  .activity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .extension-banner {
+    min-height: 210px;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(250, 249, 242, 0.99) 0%,
+        rgba(250, 249, 242, 0.94) 57%,
+        rgba(250, 249, 242, 0.39) 83%,
+        rgba(250, 249, 242, 0.08) 100%
+      ),
+      url('/extension-bg.png');
+    background-position: 62% center;
+  }
+
+  .extension-banner-inner,
+  .extension-content {
+    width: calc(100% - 40px);
+  }
+
+  .extension-banner h2 {
+    max-width: 80%;
+  }
+
+  .extension-banner-inner > p {
+    max-width: 70%;
+    line-height: 1.35;
+  }
+
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .extension-banner {
+    min-height: 200px;
+    background-position: 68% center;
+  }
+
+  .extension-banner h2 {
+    max-width: 95%;
+    font-size: 42px;
+  }
+
+  .extension-key-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .extension-key-item {
+    min-height: 92px;
+    padding-inline: 10px;
+  }
+
+  .extension-key-item + .extension-key-item {
+    border-top: 1px solid #dfe1d4;
+    border-left: 0;
+  }
+
+  .activity-media {
+    height: 180px;
+  }
+
+  .activity-card-body {
+    padding-inline: 20px;
+  }
+}
