@@ -195,7 +195,7 @@
 }
 
 .introduction-copy h2 {
-  margin: 10px 0 1px;
+  margin: 10px 0;
   font-size: 31px;
   line-height: 1.1;
 }
@@ -206,14 +206,15 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 17px !important;
   font-weight: 600;
+  line-height: 1.25;
 }
 
-.introduction-copy > p {
+.introduction-copy > p:not(.introduction-designation) {
   margin: 0 0 10px;
   color: #303a33;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 14px;
-  line-height: 1.25;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .professional-card {

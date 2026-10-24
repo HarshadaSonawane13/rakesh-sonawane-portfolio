@@ -1,11 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
 import {
-  ArrowRight,
   Presentation,
   Radio,
-  Sprout,
   UsersRound,
-  X,
 } from 'lucide-react'
 import './Extension.css'
 
@@ -24,11 +20,6 @@ const keyAreas = [
     title: 'Radio Talks',
     description: 'Sharing expert knowledge with a wider community',
     Icon: Radio,
-  },
-  {
-    title: 'Awareness Campaigns',
-    description: 'Promoting plant health and sustainable practices',
-    Icon: Sprout,
   },
 ]
 
@@ -53,6 +44,7 @@ const activities = [
       'Participating in radio programs to create awareness about plant health, crop protection and sustainable agriculture among farmers.',
     Icon: Radio,
     mediaClass: 'radio-media',
+    badge: '49 Radio Talks',
   },
 ]
 
@@ -66,27 +58,6 @@ function ExtensionLabel({ children }) {
 }
 
 function Extension() {
-  const [activeActivity, setActiveActivity] = useState(null)
-  const closeButtonRef = useRef(null)
-  const ActiveIcon = activeActivity?.Icon
-
-  useEffect(() => {
-    if (!activeActivity) return undefined
-
-    const closeOnEscape = (event) => {
-      if (event.key === 'Escape') setActiveActivity(null)
-    }
-
-    document.body.style.overflow = 'hidden'
-    window.addEventListener('keydown', closeOnEscape)
-    closeButtonRef.current?.focus()
-
-    return () => {
-      document.body.style.overflow = ''
-      window.removeEventListener('keydown', closeOnEscape)
-    }
-  }, [activeActivity])
-
   return (
     <section id="extension" className="extension-page portfolio-section">
       <header className="extension-banner" aria-labelledby="extension-title">
@@ -125,7 +96,7 @@ function Extension() {
           <h3 id="activities-title" className="sr-only">Extension Activities</h3>
           <div className="activity-grid">
             {activities.map((activity) => {
-              const { title, description, Icon, mediaClass } = activity
+              const { title, description, Icon, mediaClass, badge } = activity
 
               return (
                 <article className="activity-card" key={title}>
@@ -141,13 +112,8 @@ function Extension() {
                   </div>
                   <div className="activity-card-body">
                     <h4>{title}</h4>
+                    {badge && <span className="activity-badge">{badge}</span>}
                     <p>{description}</p>
-                    <button type="button" onClick={() => setActiveActivity(activity)}>
-                      <span aria-hidden="true">
-                        <ArrowRight size={17} />
-                      </span>
-                      View Details
-                    </button>
                   </div>
                 </article>
               )
@@ -155,38 +121,6 @@ function Extension() {
           </div>
         </section>
       </div>
-
-      {activeActivity && (
-        <div
-          className="extension-modal-backdrop"
-          role="presentation"
-          onMouseDown={() => setActiveActivity(null)}
-        >
-          <section
-            className="extension-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="extension-modal-title"
-            onMouseDown={(event) => event.stopPropagation()}
-          >
-            <button
-              ref={closeButtonRef}
-              className="extension-modal-close"
-              type="button"
-              aria-label="Close activity details"
-              onClick={() => setActiveActivity(null)}
-            >
-              <X size={21} />
-            </button>
-            <span className="extension-modal-icon" aria-hidden="true">
-              <ActiveIcon size={31} strokeWidth={1.5} />
-            </span>
-            <p>Extension Activity</p>
-            <h3 id="extension-modal-title">{activeActivity.title}</h3>
-            <p>{activeActivity.description}</p>
-          </section>
-        </div>
-      )}
     </section>
   )
 }

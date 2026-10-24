@@ -4,7 +4,6 @@ import {
   ClipboardList,
   FileText,
   FlaskConical,
-  Lightbulb,
   Microscope,
   Settings,
   Sprout,
@@ -15,7 +14,7 @@ const focusAreas = [
   {
     title: 'Plant Diseases',
     description:
-      'Study of important plant diseases, their identification, epidemiology and management.',
+      'Study of important fruit and vegetable diseases, diagnosis and management.',
     Icon: Sprout,
   },
   {
@@ -43,39 +42,6 @@ const contributions = [
   },
   { value: '11', label: 'Research Projects', Icon: FileText },
   { value: '3', label: 'Laboratory Development', Icon: Microscope },
-]
-
-const highlights = [
-  {
-    title: 'Disease Diagnosis & Identification',
-    description:
-      'Study and accurate identification of important plant pathogens.',
-    bullets: [
-      'Pathogen isolation and characterization',
-      'Disease diagnosis and symptom analysis',
-    ],
-    Icon: Microscope,
-  },
-  {
-    title: 'Management Strategies',
-    description:
-      'Evaluation and development of effective disease management approaches.',
-    bullets: [
-      'Chemical, biological and integrated management',
-      'Field evaluation and recommendations',
-    ],
-    Icon: Sprout,
-  },
-  {
-    title: 'Sustainable Solutions',
-    description:
-      'Research for environment-friendly and sustainable crop protection.',
-    bullets: [
-      'Eco-friendly disease management',
-      'Support for resilient and sustainable agriculture',
-    ],
-    Icon: Lightbulb,
-  },
 ]
 
 function ResearchLabel({ children }) {
@@ -152,28 +118,6 @@ function Research() {
           </div>
         </section>
 
-        <section className="research-block" aria-labelledby="highlights-title">
-          <ResearchLabel>Research Highlights</ResearchLabel>
-          <h3 id="highlights-title" className="sr-only">Research Highlights</h3>
-          <div className="highlight-grid">
-            {highlights.map(({ title, description, bullets, Icon }) => (
-              <article className="highlight-card" key={title}>
-                <span className="research-icon-circle highlight-icon" aria-hidden="true">
-                  <Icon size={34} strokeWidth={1.6} />
-                </span>
-                <div>
-                  <h4>{title}</h4>
-                  <p>{description}</p>
-                  <ul>
-                    {bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
       </div>
     </section>
   )

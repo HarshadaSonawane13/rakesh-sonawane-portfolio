@@ -126,15 +126,13 @@
   text-transform: uppercase;
 }
 
-.focus-grid,
-.highlight-grid {
+.focus-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
 .focus-card,
-.highlight-card,
 .contribution-card {
   border: 1px solid rgba(229, 228, 216, 0.72);
   border-radius: 7px;
@@ -164,8 +162,7 @@
   height: 57px;
 }
 
-.focus-card h4,
-.highlight-card h4 {
+.focus-card h4 {
   margin: 0 0 5px;
   color: #142019;
   font-family: 'Playfair Display', Georgia, serif;
@@ -174,8 +171,7 @@
   line-height: 1.12;
 }
 
-.focus-card p,
-.highlight-card p {
+.focus-card p {
   margin: 0;
   color: #3b443e;
   font-family: 'Playfair Display', Georgia, serif;
@@ -227,37 +223,6 @@
   line-height: 1.2;
 }
 
-.highlight-card {
-  min-height: 150px;
-  padding: 15px 18px;
-  display: grid;
-  grid-template-columns: 62px minmax(0, 1fr);
-  gap: 17px;
-}
-
-.highlight-icon {
-  width: 61px;
-  height: 61px;
-}
-
-.highlight-card h4 {
-  margin-top: 3px;
-  font-size: 16px;
-}
-
-.highlight-card ul {
-  margin: 11px 0 0;
-  padding-left: 16px;
-  color: #435044;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 11px;
-  line-height: 1.45;
-}
-
-.highlight-card li::marker {
-  color: #4d851d;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -293,16 +258,6 @@
     min-height: 106px;
   }
 
-  .highlight-card {
-    grid-template-columns: 52px 1fr;
-    padding-inline: 14px;
-    gap: 12px;
-  }
-
-  .highlight-icon {
-    width: 52px;
-    height: 52px;
-  }
 }
 
 @media (max-width: 760px) {
@@ -338,13 +293,11 @@
     margin-top: 28px;
   }
 
-  .focus-grid,
-  .highlight-grid {
+  .focus-grid {
     grid-template-columns: 1fr;
   }
 
-  .focus-card,
-  .highlight-card {
+  .focus-card {
     min-height: auto;
   }
 
@@ -386,9 +339,5 @@
 
   .contribution-card strong {
     font-size: 24px;
-  }
-
-  .highlight-card {
-    grid-template-columns: 1fr;
   }
 }

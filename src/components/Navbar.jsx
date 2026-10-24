@@ -129,9 +129,11 @@ function Navbar() {
           ))}
         </nav>
 
-        <button className="search-button" type="button" aria-label="Search">
-          <Search size={19} strokeWidth={1.8} />
-        </button>
+        {activeSection !== 'home' && (
+          <button className="search-button" type="button" aria-label="Search">
+            <Search size={19} strokeWidth={1.8} />
+          </button>
+        )}
       </div>
     </header>
   )

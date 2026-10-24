@@ -6,7 +6,6 @@ import {
   FileText,
   Filter,
   Library,
-  Mic,
   Search,
   Settings,
   Sprout,
@@ -20,7 +19,6 @@ const statistics = [
   { value: 79, label: 'Extension Papers', Icon: Sprout },
   { value: 2, label: 'Books', Icon: BookOpen },
   { value: 1, label: 'Book Chapters', Icon: BookCopy },
-  { value: 49, label: 'Radio Talks', Icon: Mic },
 ]
 
 const publicationTypes = [
@@ -29,7 +27,6 @@ const publicationTypes = [
   { name: 'Extension Paper', label: 'Extension Papers', count: 79 },
   { name: 'Book', label: 'Books', count: 2 },
   { name: 'Book Chapter', label: 'Book Chapters', count: 1 },
-  { name: 'Radio Talk', label: 'Radio Talks', count: 49 },
 ]
 
 const publications = publicationTypes.map(({ name }, index) => ({

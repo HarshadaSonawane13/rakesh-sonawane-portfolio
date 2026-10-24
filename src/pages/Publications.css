@@ -89,7 +89,7 @@
   border: 1px solid rgba(229, 228, 216, 0.6);
   border-radius: 8px;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   background: linear-gradient(110deg, #f8f8ed, #f3f4e5);
 }
 
@@ -556,6 +556,10 @@
     border-top: 1px solid #dfe1d4;
   }
 
+  .publication-stat:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
   .publications-layout {
     grid-template-columns: 1fr;
   }
@@ -575,6 +579,10 @@
     padding-inline: 7px;
     justify-content: flex-start;
     gap: 8px;
+  }
+
+  .publication-stat:last-child:nth-child(odd) {
+    justify-content: center;
   }
 
   .publication-stat-icon {

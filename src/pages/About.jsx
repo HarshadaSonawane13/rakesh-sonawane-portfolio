@@ -17,7 +17,7 @@ const professionalInfo = [
   },
   {
     label: 'Specialization',
-    value: 'Plant Pathology',
+    value: 'Soil Microbiology, Plant Pathology',
     Icon: Sprout,
   },
   {
@@ -27,7 +27,7 @@ const professionalInfo = [
   },
   {
     label: 'Focus Areas',
-    value: 'Research, education and farmer outreach',
+    value: 'Research, extension and farmer outreach',
     Icon: UsersRound,
   },
 ]
@@ -116,20 +116,19 @@ function About() {
           <article className="introduction-copy">
             <SectionEyebrow>Introduction</SectionEyebrow>
             <h2 id="introduction-title">Dr. Rakesh Sonawane</h2>
-            <p className="introduction-designation">
-              Assistant Professor | Plant Pathology
-            </p>
             <p>
-              I am an Assistant Professor in Plant Pathology with a strong
-              interest in understanding plant diseases and developing
-              sustainable solutions for crop protection. My work focuses on
-              research, education and extension activities to support resilient
-              agriculture and improve farmers&apos; livelihoods.
+              I am an Assistant Professor of Plant Pathology with a strong
+              interest in understanding plant diseases and developing sustainable
+              crop protection solutions. My work focuses on research and extension
+              activities related to soil microbiology and the management of
+              diseases affecting fruit and vegetable crops, with the aim of
+              promoting climate-resilient and sustainable agriculture and
+              improving farmers’ livelihoods.
             </p>
             <p>
               I am committed to contributing through scientific research,
-              practical recommendations and farmer-oriented programs for the
-              benefit of the farming community.
+              field demonstrations, and farmer-oriented programs for the benefit
+              of the farming community.
             </p>
           </article>
 

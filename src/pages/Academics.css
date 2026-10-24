@@ -105,9 +105,7 @@
   gap: 10px;
 }
 
-.academic-contribution-card,
-.teaching-card,
-.student-guidance-card {
+.academic-contribution-card {
   border: 1px solid #e5e4d8;
   border-radius: 7px;
   background: linear-gradient(125deg, rgba(249, 248, 239, 0.98), rgba(244, 245, 232, 0.7));
@@ -147,9 +145,7 @@
   line-height: 1;
 }
 
-.academic-contribution-card h4,
-.teaching-card h4,
-.student-guidance-card h4 {
+.academic-contribution-card h4 {
   margin: 0;
   color: #152119;
   font-family: 'Playfair Display', Georgia, serif;
@@ -164,97 +160,6 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 11px;
   line-height: 1.4;
-}
-
-.academic-section {
-  margin-top: 20px;
-}
-
-.teaching-grid,
-.student-guidance-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.teaching-card {
-  min-height: 158px;
-  padding: 16px 21px;
-}
-
-.teaching-card-heading {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.teaching-card-heading h4 {
-  max-width: 300px;
-  padding: 9px 20px;
-  border-radius: 999px;
-  background: #e9edd8;
-}
-
-.teaching-card ul {
-  margin: 13px 0 0 51px;
-  padding-left: 18px;
-  color: #3f4942;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 11px;
-  line-height: 1.65;
-}
-
-.teaching-card li::marker {
-  color: #4d8b1c;
-}
-
-.student-guidance-card {
-  min-height: 126px;
-  padding: 15px 16px;
-  display: grid;
-  grid-template-columns: 58px minmax(0, 1fr) 96px;
-  gap: 16px;
-  align-items: center;
-}
-
-.student-guidance-copy h4 {
-  margin-bottom: 8px;
-  font-size: 15px;
-}
-
-.student-guidance-copy p {
-  margin: 0;
-  color: #3f4942;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 11px;
-  line-height: 1.35;
-}
-
-.student-number-panel {
-  min-height: 95px;
-  padding: 9px;
-  border-radius: 7px;
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  background: linear-gradient(135deg, #eef1de, #e5ebcf);
-  color: var(--forest);
-  text-align: center;
-}
-
-.student-number-panel strong {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 34px;
-  line-height: 1;
-}
-
-.student-number-panel span {
-  max-width: 65px;
-  margin-top: 4px;
-  color: #485641;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 10px;
-  line-height: 1.15;
 }
 
 @media (max-width: 1050px) {
@@ -293,10 +198,6 @@
     line-height: 1.35;
   }
 
-  .teaching-grid,
-  .student-guidance-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 540px) {
@@ -315,26 +216,5 @@
 
   .academic-contribution-card {
     min-height: auto;
-  }
-
-  .teaching-card ul {
-    margin-left: 12px;
-  }
-
-  .teaching-card-heading {
-    align-items: flex-start;
-  }
-
-  .teaching-card-heading h4 {
-    padding: 8px 13px;
-  }
-
-  .student-guidance-card {
-    grid-template-columns: 55px minmax(0, 1fr);
-  }
-
-  .student-number-panel {
-    grid-column: 1 / -1;
-    min-height: 72px;
   }
 }
