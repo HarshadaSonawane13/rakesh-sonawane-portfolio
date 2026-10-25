@@ -1,5 +1,6 @@
 import {
   BookOpen,
+  ExternalLink,
   GraduationCap,
   Microscope,
   ScrollText,
@@ -130,6 +131,15 @@ function About() {
               field demonstrations, and farmer-oriented programs for the benefit
               of the farming community.
             </p>
+            <a
+              className="button button-primary academic-profile-button"
+              href="https://vidwan.inflibnet.ac.in/profile/708011"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Complete Profile
+              <ExternalLink size={17} aria-hidden="true" />
+            </a>
           </article>
 
           <aside className="professional-card" aria-label="Professional information">

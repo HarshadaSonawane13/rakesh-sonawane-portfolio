@@ -217,6 +217,18 @@
   line-height: 1.5;
 }
 
+.academic-profile-button {
+  min-height: 43px;
+  padding-inline: 20px;
+  margin-top: 3px;
+  font-size: 13px;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.academic-profile-button:hover {
+  transform: translateY(-2px);
+}
+
 .professional-card {
   padding: 5px 17px;
   border: 1px solid rgba(36, 77, 10, 0.04);
@@ -491,5 +503,9 @@
 
   .introduction-copy h2 {
     font-size: 27px;
+  }
+
+  .academic-profile-button {
+    width: 100%;
   }
 }

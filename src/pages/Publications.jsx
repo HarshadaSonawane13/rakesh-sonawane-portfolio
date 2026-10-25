@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   ArrowRight,
-  BookCopy,
   BookOpen,
   FileText,
   Filter,
@@ -16,23 +15,28 @@ import './Publications.css'
 const statistics = [
   { value: 35, label: 'Research Articles', Icon: FileText },
   { value: 41, label: 'Technical Papers', Icon: Settings },
-  { value: 79, label: 'Extension Papers', Icon: Sprout },
-  { value: 2, label: 'Books', Icon: BookOpen },
-  { value: 1, label: 'Book Chapters', Icon: BookCopy },
+  { value: 81, label: 'Extension Papers', Icon: Sprout },
+  { value: 4, label: 'Books and Book Chapters', Icon: BookOpen },
 ]
 
 const publicationTypes = [
   { name: 'Research Article', label: 'Research Articles', count: 35 },
   { name: 'Technical Paper', label: 'Technical Papers', count: 41 },
-  { name: 'Extension Paper', label: 'Extension Papers', count: 79 },
-  { name: 'Book', label: 'Books', count: 2 },
-  { name: 'Book Chapter', label: 'Book Chapters', count: 1 },
+  { name: 'Extension Paper', label: 'Extension Papers', count: 81 },
+  {
+    name: 'Books and Book Chapters',
+    label: 'Books and Book Chapters',
+    count: 4,
+  },
 ]
 
 const publications = publicationTypes.map(({ name }, index) => ({
   id: index + 1,
   type: name,
-  title: `${name} details to be added`,
+  title:
+    name === 'Books and Book Chapters'
+      ? 'Books and Book Chapters'
+      : `${name} details to be added`,
   authors: null,
   source: null,
   volume: null,
@@ -231,25 +235,117 @@ function Publications() {
 
             <div className="publication-list">
               {visiblePublications.map((publication) => (
-                <article className="publication-card" key={publication.id}>
+                <article
+                  className={`publication-card${['Research Article', 'Technical Paper', 'Extension Paper', 'Books and Book Chapters'].includes(publication.type) ? ' document-publication-card' : ''}`}
+                  key={publication.id}
+                >
                   <span className="publication-number" aria-hidden="true">
                     {publication.id}
                   </span>
                   <div className="publication-summary">
-                    <h4>{publication.title}</h4>
-                    <p>Authors: Not provided</p>
-                    <p>Publication details: Not provided</p>
-                    <p>Year: Not provided</p>
+                    {publication.type === 'Research Article' ? (
+                      <>
+                        <h4>Research Articles</h4>
+                        <p className="document-publication-description">
+                          View the complete collection of 35 research articles,
+                          including authors, paper titles, journal names,
+                          publication years, and page details.
+                        </p>
+                      </>
+                    ) : publication.type === 'Technical Paper' ? (
+                      <>
+                        <h4>Technical Papers</h4>
+                        <p className="document-publication-description">
+                          Explore the collection of 41 technical papers covering
+                          plant pathology, crop disease management, biological
+                          control, soil microbiology, and sustainable agriculture.
+                        </p>
+                      </>
+                    ) : publication.type === 'Extension Paper' ? (
+                      <>
+                        <h4>Extension Papers</h4>
+                        <p className="document-publication-description">
+                          Explore 81 extension publications covering crop disease
+                          management, plant protection, soil microbiology, fruit
+                          and vegetable crops, and sustainable agricultural
+                          practices.
+                        </p>
+                      </>
+                    ) : publication.type === 'Books and Book Chapters' ? (
+                      <>
+                        <h4>Books and Book Chapters</h4>
+                        <p className="document-publication-description">
+                          Explore 2 books and 2 book chapters related to plant
+                          pathology and sustainable agriculture.
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <h4>{publication.title}</h4>
+                        <p>Authors: Not provided</p>
+                        <p>Publication details: Not provided</p>
+                        <p>Year: Not provided</p>
+                      </>
+                    )}
                   </div>
                   <div className="publication-card-actions">
-                    <span className="publication-type">{publication.type}</span>
-                    <button
-                      type="button"
-                      onClick={() => setActivePublication(publication)}
-                    >
-                      View Details
-                      <ArrowRight size={15} aria-hidden="true" />
-                    </button>
+                    <span className="publication-type">
+                      {publication.type === 'Research Article'
+                        ? 'Research Articles · 35'
+                        : publication.type === 'Technical Paper'
+                          ? 'Technical Papers · 41'
+                          : publication.type === 'Extension Paper'
+                            ? 'Extension Papers · 81'
+                            : publication.type === 'Books and Book Chapters'
+                              ? 'Books and Book Chapters · 4'
+                            : publication.type}
+                    </span>
+                    {publication.type === 'Research Article' ? (
+                      <a
+                        href="/research-articles.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Details
+                        <ArrowRight size={15} aria-hidden="true" />
+                      </a>
+                    ) : publication.type === 'Technical Paper' ? (
+                      <a
+                        href="/technical-papers.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="view-details-button"
+                      >
+                        View Details <span aria-hidden="true">→</span>
+                      </a>
+                    ) : publication.type === 'Extension Paper' ? (
+                      <a
+                        href="/extension-papers.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="view-details-button"
+                      >
+                        View Details <span aria-hidden="true">→</span>
+                      </a>
+                    ) : publication.type === 'Books and Book Chapters' ? (
+                      <a
+                        href="/documents/RBS-Book-portfolio-2026.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="view-details-button"
+                      >
+                        View Details
+                        <ArrowRight size={15} aria-hidden="true" />
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setActivePublication(publication)}
+                      >
+                        View Details
+                        <ArrowRight size={15} aria-hidden="true" />
+                      </button>
+                    )}
                   </div>
                 </article>
               ))}
