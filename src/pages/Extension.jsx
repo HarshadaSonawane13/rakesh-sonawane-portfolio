@@ -28,22 +28,25 @@ const activities = [
     title: 'Farmer Outreach',
     description:
       'Interacting with farmers to share knowledge on plant disease management, crop protection and best agricultural practices.',
-    Icon: UsersRound,
     mediaClass: 'farmer-media',
+    imageSrc: '/farmer outreach.jpeg',
+    imageAlt: 'Farmer outreach session on plant disease management',
   },
   {
     title: 'Training Programs',
     description:
       'Conducting training sessions for farmers, extension workers and stakeholders on plant disease identification and management.',
-    Icon: Presentation,
     mediaClass: 'training-media',
+    imageSrc: '/traning program.jpeg',
+    imageAlt: 'Training program for farmers and agricultural stakeholders',
   },
   {
     title: 'Radio Talks',
     description:
       'Participating in radio programs to create awareness about plant health, crop protection and sustainable agriculture among farmers.',
-    Icon: Radio,
     mediaClass: 'radio-media',
+    imageSrc: '/radio talk.jpeg',
+    imageAlt: 'Dr. Rakesh Sonawane presenting an agricultural radio talk',
     badge: '49 Radio Talks',
   },
 ]
@@ -96,19 +99,23 @@ function Extension() {
           <h3 id="activities-title" className="sr-only">Extension Activities</h3>
           <div className="activity-grid">
             {activities.map((activity) => {
-              const { title, description, Icon, mediaClass, badge } = activity
+              const {
+                title,
+                description,
+                mediaClass,
+                imageSrc,
+                imageAlt,
+                badge,
+              } = activity
 
               return (
                 <article className="activity-card" key={title}>
-                  <div
-                    className={`activity-media ${mediaClass}`}
-                    role="img"
-                    aria-label={`${title} image placeholder`}
-                  >
-                    <span>
-                      <Icon size={43} strokeWidth={1.3} aria-hidden="true" />
-                      <small>Image to be added</small>
-                    </span>
+                  <div className={`activity-media ${mediaClass}`}>
+                    <img
+                      className="activity-image"
+                      src={imageSrc}
+                      alt={imageAlt}
+                    />
                   </div>
                   <div className="activity-card-body">
                     <h4>{title}</h4>

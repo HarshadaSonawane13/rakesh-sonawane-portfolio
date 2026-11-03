@@ -104,14 +104,11 @@ function About() {
       <section className="introduction-section" aria-labelledby="introduction-title">
         <div className="introduction-grid">
           <div className="portrait-frame">
-            <div
-              className="portrait-placeholder"
-              role="img"
-              aria-label="Replaceable portrait placeholder for Dr. Rakesh Sonawane"
-            >
-              <UserRound aria-hidden="true" strokeWidth={1.25} />
-              <span>Portrait placeholder</span>
-            </div>
+            <img
+              className="portrait-photo"
+              src="/rakesh%20sonawane%20photo.jpeg"
+              alt="Dr. Rakesh Sonawane"
+            />
           </div>
 
           <article className="introduction-copy">

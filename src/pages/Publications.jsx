@@ -3,9 +3,7 @@ import {
   ArrowRight,
   BookOpen,
   FileText,
-  Filter,
   Library,
-  Search,
   Settings,
   Sprout,
   X,
@@ -50,14 +48,6 @@ const publications = publicationTypes.map(({ name }, index) => ({
 }))
 
 function Publications() {
-  const [selectedTypes, setSelectedTypes] = useState([])
-  const [keyword, setKeyword] = useState('')
-  const [year, setYear] = useState('')
-  const [appliedFilters, setAppliedFilters] = useState({
-    types: [],
-    keyword: '',
-    year: '',
-  })
   const [sortOrder, setSortOrder] = useState('newest')
   const [activePublication, setActivePublication] = useState(null)
   const closeButtonRef = useRef(null)
@@ -80,59 +70,13 @@ function Publications() {
   }, [activePublication])
 
   const visiblePublications = useMemo(() => {
-    const normalizedKeyword = appliedFilters.keyword.trim().toLowerCase()
-    const filtered = publications.filter((publication) => {
-      const matchesType =
-        appliedFilters.types.length === 0 ||
-        appliedFilters.types.includes(publication.type)
-      const matchesYear =
-        !appliedFilters.year ||
-        String(publication.year) === appliedFilters.year
-      const searchableText = [
-        publication.title,
-        publication.type,
-        publication.authors,
-        publication.source,
-        ...publication.keywords,
-      ]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase()
-
-      return (
-        matchesType &&
-        matchesYear &&
-        (!normalizedKeyword || searchableText.includes(normalizedKeyword))
-      )
-    })
-
-    return [...filtered].sort((a, b) => {
+    return [...publications].sort((a, b) => {
       if (sortOrder === 'title-asc') return a.title.localeCompare(b.title)
       if (sortOrder === 'title-desc') return b.title.localeCompare(a.title)
       if (sortOrder === 'oldest') return (a.year ?? Infinity) - (b.year ?? Infinity)
       return (b.year ?? -Infinity) - (a.year ?? -Infinity)
     })
-  }, [appliedFilters, sortOrder])
-
-  const toggleType = (type) => {
-    setSelectedTypes((current) =>
-      current.includes(type)
-        ? current.filter((item) => item !== type)
-        : [...current, type],
-    )
-  }
-
-  const applyFilters = (event) => {
-    event.preventDefault()
-    setAppliedFilters({ types: selectedTypes, keyword, year })
-  }
-
-  const resetFilters = () => {
-    setSelectedTypes([])
-    setKeyword('')
-    setYear('')
-    setAppliedFilters({ types: [], keyword: '', year: '' })
-  }
+  }, [sortOrder])
 
   return (
     <section id="publications" className="publications-page portfolio-section">
@@ -164,54 +108,6 @@ function Publications() {
         </section>
 
         <div className="publications-layout">
-          <aside className="publication-filters" aria-labelledby="filter-title">
-            <div className="filter-heading">
-              <Filter size={20} aria-hidden="true" />
-              <h3 id="filter-title">Filter Publications</h3>
-            </div>
-
-            <form onSubmit={applyFilters}>
-              <fieldset>
-                <legend>Publication Type</legend>
-                {publicationTypes.map(({ name, label, count }) => (
-                  <label className="filter-checkbox" key={name}>
-                    <input
-                      type="checkbox"
-                      checked={selectedTypes.includes(name)}
-                      onChange={() => toggleType(name)}
-                    />
-                    <span>{label} ({count})</span>
-                  </label>
-                ))}
-              </fieldset>
-
-              <label className="filter-control">
-                <span>Year</span>
-                <select value={year} onChange={(event) => setYear(event.target.value)}>
-                  <option value="">All Years</option>
-                </select>
-              </label>
-
-              <label className="filter-control">
-                <span>Keywords</span>
-                <span className="keyword-input">
-                  <input
-                    type="search"
-                    value={keyword}
-                    placeholder="Search by keyword..."
-                    onChange={(event) => setKeyword(event.target.value)}
-                  />
-                  <Search size={18} aria-hidden="true" />
-                </span>
-              </label>
-
-              <div className="filter-actions">
-                <button type="submit">Apply Filters</button>
-                <button type="button" onClick={resetFilters}>Reset</button>
-              </div>
-            </form>
-          </aside>
-
           <section className="publication-results" aria-labelledby="publication-list-title">
             <div className="publication-list-header">
               <div>

@@ -42,7 +42,7 @@
 .publications-eyebrow p {
   margin: 0;
   color: var(--forest);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.27em;
   text-transform: uppercase;
@@ -128,7 +128,7 @@
   margin: 4px 0 0;
   color: #303a33;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -136,8 +136,7 @@
 .publications-layout {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: minmax(225px, 27%) minmax(0, 73%);
-  gap: 21px;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
 }
 
@@ -177,7 +176,7 @@
   margin-bottom: 7px;
   color: var(--forest);
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -189,7 +188,7 @@
   color: #37423b;
   cursor: pointer;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .filter-checkbox input {
@@ -217,7 +216,7 @@
 .keyword-input input {
   padding: 0 10px;
   color: #334039;
-  font: 12px 'Inter', Arial, sans-serif;
+  font: 13px 'Inter', Arial, sans-serif;
 }
 
 .keyword-input {
@@ -291,7 +290,7 @@
   gap: 8px;
   color: #344038;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .publication-list-header select {
@@ -302,7 +301,7 @@
   border-radius: 4px;
   background: var(--ivory);
   color: #344038;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .publication-list {
@@ -345,7 +344,7 @@
   margin: 0 0 1px;
   color: #162119;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   overflow-wrap: anywhere;
 }
@@ -354,7 +353,7 @@
   margin: 0;
   color: #465049;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.16;
 }
 
@@ -375,7 +374,7 @@
 
 .document-publication-card .document-publication-description {
   max-width: 610px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.45;
 }
 
@@ -388,14 +387,14 @@
 .publication-type {
   padding: 4px 9px;
   border-radius: 999px;
-  overflow: hidden;
   background: #eef0dc;
   color: var(--forest);
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 9px;
+  font-size: 10px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
   text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .publication-card-actions button,
@@ -407,7 +406,7 @@
   gap: 7px;
   background: var(--ivory);
   color: #1c2e20;
-  font-size: 10px;
+  font-size: 11px;
   text-decoration: none;
 }
 
@@ -474,7 +473,7 @@
 
 .modal-heading p {
   margin: 0 0 3px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -536,7 +535,7 @@
   }
 
   .publications-layout {
-    grid-template-columns: minmax(220px, 30%) minmax(0, 70%);
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

@@ -9,26 +9,9 @@ import Research from './pages/Research'
 import Publications from './pages/Publications'
 import Extension from './pages/Extension'
 import Academics from './pages/Academics'
+import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import './App.css'
-
-const pages = [
-  ['gallery', 'Gallery'],
-]
-
-function PortfolioSection({ id, title }) {
-  return (
-    <section
-      id={id}
-      className="portfolio-section placeholder-section"
-      aria-labelledby={`${id}-title`}
-    >
-      <p className="eyebrow">Academic Portfolio</p>
-      <h2 id={`${id}-title`}>{title}</h2>
-      <p>This section is being prepared.</p>
-    </section>
-  )
-}
 
 function PortfolioPage() {
   const location = useLocation()
@@ -59,9 +42,7 @@ function PortfolioPage() {
       <Publications />
       <Extension />
       <Academics />
-      {pages.map(([id, title]) => (
-        <PortfolioSection key={id} id={id} title={title} />
-      ))}
+      <Gallery />
       <Contact />
       <Footer />
     </main>
